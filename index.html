@@ -24,6 +24,8 @@
         <nav>
             <a href="#experiencia">Experiencia</a>
             <a href="#proyectos">Proyectos</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contacto">Contactame</a>
             <a href="https://github.com/edalmava" target="_blank">Github</a>
         </nav>
     </header>
@@ -54,6 +56,51 @@
         </article>
       </section>
       <img alt="Fotografía de Edwin Alberto Martinez Vanegas disfrutando de la naturaleza" src="" title="Foto de Edalmava">
+      <section id="faq">
+        <header><h2>Preguntas Frecuentes</h2></header>
+        <details>
+            <summary>¿Dónde puedo encontrar el código fuente del Portfolio?</summary>
+            Si te gusta el portfolio puedes encontrar el código fuente en <a href="https://github.com/edalmava/portafolio" target="_blank" title="Repositorio Github del Portfolio">https://github.com/edalmava/portafolio</a>
+        </details>
+        <details>
+            <summary>¿Cuáles son tus hobbies?</summary>
+            Perder el tiempo en cosas como estás sin sentido
+        </details>
+        <details>
+            <summary>¿Tienes esposa?</summary>
+            Tengo pareja que es mi esposa (aunque no lo este)
+        </details>
+      </section>
+      <section id="contacto">
+        <header>Contactame</header>
+        <form method="post" action="https://contacto.edalmava.co">
+            <fieldset>
+                <legend>Información Personal</legend>
+
+                <label for="name">
+                    Nombre
+                </label>
+                <input type="text" id="name" name="name" placeholder="Pon tu nombre no seas timido" required>
+
+                <label for="email">
+                    Correo
+                </label>
+                <input type="email" id="email" name="email" placeholder="Tu correo electrónico" required>
+
+                <label for="mensaje">Mensaje</label>
+                <textarea name="mensaje" id="mensaje" cols="30" rows="10" required></textarea>
+            </fieldset>
+
+            <fieldset>
+                <legend>Información adicional</legend>
+
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="Tu teléfono">
+            </fieldset>
+            
+            <button type="submit">Envía tu mensaje</button>            
+        </form>
+      </section>
     </main>
     <aside>
         <header>
