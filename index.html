@@ -9,7 +9,7 @@
     
     <meta name="robots" content="index, follow">
     
-    <link rel="icon" type="" href="">
+    <link rel="icon" type="image/png" href="/img/icon.png">
 
     <style>
         body {
@@ -25,14 +25,16 @@
             <a href="#experiencia">Experiencia</a>
             <a href="#proyectos">Proyectos</a>
             <a href="#faq">FAQ</a>
-            <a href="#contacto">Contactame</a>
+            <a href="#contacto">Contáctame</a>
             <a href="https://github.com/edalmava" target="_blank">Github</a>
         </nav>
+
+        <p>
+            Ingeniero de sistemas. <strong>Docente de Aula</strong> en el área de Informática y Tecnología.  Desarrollador Web con más de 10 años de experiencia.
+        </p>
+        <img alt="Fotografía de Edwin Alberto Martinez Vanegas disfrutando de la naturaleza" src="/img/foto.jpg" style="aspect-ratio: 4/3; width: 100%" title="Foto de Edalmava">
     </header>
-    <main>
-      <p>
-        Ingeniero de sistemas. <strong>Docente de Aula</strong> en el área de Informática y Tecnología.  Desarrollador Web con más de 10 años de experiencia.
-      </p>
+    <main>      
       <section id="experiencia">
         <header>
             <h2>Experiencia</h2>
@@ -51,11 +53,10 @@
             <p>App para consultar las OPEC que tienen listas de elegibles.  De las listas de elegibles mostrar los participantes y sus estados</p>
             <p>Sitio: <a href="https://opec.edalmava.co" target="_blank" title="Sitio listas de elegibles">https://opec.edalmava.co</a></p>
             <footer>
-                <small>Tecnologías usadas: HTML, CSS y JavaScript</small>
+                <small>Tecnologías usadas: HTML, CSS, JavaScript, Cloudflare Workers</small>
             </footer>
         </article>
-      </section>
-      <img alt="Fotografía de Edwin Alberto Martinez Vanegas disfrutando de la naturaleza" src="" title="Foto de Edalmava">
+      </section>      
       <section id="faq">
         <header><h2>Preguntas Frecuentes</h2></header>
         <details>
@@ -68,11 +69,11 @@
         </details>
         <details>
             <summary>¿Tienes esposa?</summary>
-            Tengo pareja que es mi esposa (aunque no lo este)
+            Tengo pareja que es mi esposa (aunque no este casado)
         </details>
       </section>
       <section id="contacto">
-        <header>Contactame</header>
+        <header>Contáctame</header>
         <form method="post" action="https://contacto.edalmava.co">
             <fieldset>
                 <legend>Información Personal</legend>
@@ -110,13 +111,33 @@
             <li>HTML</li>
             <li>CSS</li>
             <li>JavaScript</li>
+            <li>Python</li>
         </ul>
     </aside>
     <footer>        
-        2023 - Desarrollado por Edalmava con ❤️
+        2023 - Desarrollado por Edalmava con ❤️ <br>
+        <a href="https://www.flaticon.es/iconos-gratis/favicon" title="favicon iconos">Favicon iconos creados por Chanut-is-Industries - Flaticon</a>
+        <br><br>
 
         <a href="mailto:admin@edalmava.co" target="_blank">Saludame con un correo</a>
         <a href="https://t.me/edalmava" target="_blank" title"Telegrameame">Contactar por Telegram</a>
     </footer>
+
+    <script>
+        const summaries = document.querySelectorAll('#faq summary');
+
+        summaries.forEach((summary) => {
+        summary.addEventListener('click', closeOpenedDetails);
+        });
+
+        function closeOpenedDetails() {
+        summaries.forEach((summary) => {
+            let detail = summary.parentNode;
+            if (detail != this.parentNode) {
+                detail.removeAttribute('open');
+            }
+            });
+        }
+    </script>
 </body>
 </html>
