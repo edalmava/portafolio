@@ -12,13 +12,47 @@
     <link rel="icon" type="image/png" href="/img/icon.png">
 
     <style>
-        body {
+        body {            
             background-color: rgb(252, 145, 106, 0.5);
+            margin: 10px 20px;
+            padding: 5px;
+        }
+        #contenedor {
+            display: grid;
+            grid-template-columns: 0.4fr 1.6fr; 
+            grid-template-rows: auto auto auto; 
+            gap: 0px 0px;
+        }
+        .header {
+            grid-column: 1 / 3;
+            grid-row: 1;
+            display: grid;
+            grid-template-columns: 1.4fr 0.6fr;
+        }
+        .main {
+            grid-column: 2;
+            grid-row: 2;
+        }
+        .aside {
+            grid-column: 1;
+            grid-row: 2;
+        }
+        .footer {
+            grid-column: 1 /3;
+            grid-row: 3;
+        }
+
+        img {
+            border-radius: 50%;
+            display: block;
+            border:1px solid rgba(255,255,255,0);
         }
     </style>
 </head>
 <body>
-    <header>
+    <div id="contenedor">
+    <header class="header">
+        <div class="">
         <h1>Portfolio de Edalmava 👨‍💻</h1>
         
         <nav>
@@ -32,9 +66,10 @@
         <p>
             Ingeniero de sistemas. <strong>Docente de Aula</strong> en el área de Informática y Tecnología.  Desarrollador Web con más de 10 años de experiencia.
         </p>
+        </div>
         <img alt="Fotografía de Edwin Alberto Martinez Vanegas disfrutando de la naturaleza" loading="lazy" src="/img/foto.jpg" style="aspect-ratio: 4/3; width: 100%" title="Foto de Edalmava">
     </header>
-    <main>      
+    <main class="main">      
       <section id="experiencia">
         <header>
             <h2>Experiencia</h2>
@@ -111,7 +146,7 @@
         </form>
       </section>
     </main>
-    <aside>
+    <aside class="aside">
         <header>
             <h3>Mis tecnologías favoritas</h3>
         </header>
@@ -122,7 +157,7 @@
             <li>Python</li>
         </ul>
     </aside>
-    <footer>        
+    <footer class="footer">        
         2023 - Desarrollado por Edalmava con ❤️ <br>
         <a href="https://www.flaticon.es/iconos-gratis/favicon" title="favicon iconos">Favicon iconos creados por Chanut-is-Industries - Flaticon</a>
         <br><br>
@@ -130,6 +165,7 @@
         <a href="mailto:admin@edalmava.co" target="_blank">Saludame con un correo</a>
         <a href="https://t.me/edalmava" target="_blank" title"Telegrameame">Contactar por Telegram</a>
     </footer>
+    </div>
 
     <script>
         const summaries = document.querySelectorAll('#faq summary');
