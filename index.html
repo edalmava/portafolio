@@ -13,9 +13,17 @@
 
     <style>
         body {            
-            background-color: rgb(252, 145, 106, 0.5);
+            background-color: rgb (252 145 106 / 0.5);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 10px 20px;
             padding: 5px;
+        }
+        h1, nav a { color: #09f; }
+        .boton {            
+            background-color: #09f;
+            color: white;
+            outline: 1px solid #09f;
+            text-decoration: none;
         }
         #contenedor {
             display: grid;
@@ -45,7 +53,7 @@
         img {
             border-radius: 50%;
             display: block;
-            border:1px solid rgba(255,255,255,0);
+            border: 1px solid rgb(255 255 255 / 1);
         }
     </style>
 </head>
@@ -86,7 +94,7 @@
         <article>
             <header><h3>Telegram Bot</h3></header>
             <p>Bot de Telegram para consultar la lista de elegibles de una OPEC dada</p>
-            <p>Bot: <a href="https://t.me/OpecEdalmavaBot" target="_blank" title="Bot de Telegram para consultar una OPEC">OpecEdalmavaBot</a></p>
+            <p>Bot: <a class="boton" href="https://t.me/OpecEdalmavaBot" target="_blank" title="Bot de Telegram para consultar una OPEC">OpecEdalmavaBot</a></p>
             <footer>
                 <small>Tecnologías usadas: <em>Python (Flask), Vercel Serverless Functions</em></small>
             </footer>
@@ -94,7 +102,7 @@
         <article>
             <header><h3>Listas de Elegibles</h3></header>
             <p>App para consultar las OPEC que tienen listas de elegibles.  De las listas de elegibles mostrar los participantes y sus estados</p>
-            <p>Sitio: <a href="https://opec.edalmava.co" target="_blank" title="Sitio listas de elegibles">https://opec.edalmava.co</a></p>
+            <p>Sitio: <a class="boton" href="https://opec.edalmava.co" target="_blank" title="Sitio listas de elegibles">https://opec.edalmava.co</a></p>
             <footer>
                 <small>Tecnologías usadas: <em>HTML, CSS, JavaScript, Cloudflare Workers</em></small>
             </footer>
