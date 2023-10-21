@@ -33,7 +33,7 @@
             flex-direction: row;          
         }
         h2 { color: #5F85E3; }
-        h3 { color: #5FD8E3; }
+        h3 { color: rgb(95, 216, 227); }
         nav a {
             background-color: #645FE3;
             color: white;
@@ -51,11 +51,30 @@
             text-decoration: none;
         }
         .header p {
-            background-color: rgb(95 216 227 / 0.2); 
+            background-color: rgb(95 216 227 / 0.1); 
             outline: 1px solid ;
             grid-column: 1 / 3;
             grid-row: 3;
             padding: 5px;
+            animation-duration: 5s;
+            animation-name: slidein;
+        }
+        @keyframes slidein {
+            from {
+                margin-left: 100%;
+                width: 300%;
+            }
+
+            75% {
+                font-size: 200%;
+                margin-left: 25%;
+                width: 150%;
+            }
+
+            to {
+                margin-left: 0%;
+                width: 100%;
+            }
         }
         .header .imagen {
             grid-column: 2;
