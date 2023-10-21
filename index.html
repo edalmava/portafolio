@@ -12,128 +12,128 @@
     <link rel="icon" type="image/png" href="/img/icon.png">
 
     <style>
-        body {            
-            background-color: white;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: content-box;
+        * {
+            --background-color: white; 
+            --h1-color: rgb(0 96 161);
+            --h2-color: rgb(95 133 227);
+            --h3-color: rgb(95, 216, 227);
+            --a-footer-color: rgb(143 95 227);
+            --boton-background-color: rgb(0 96 161);            
         }
-        h1 { 
-            color: #0060A1;
-            grid-column: 1 / 3;
-            grid-row: 1;
-        }
-        nav {
-            grid-column: 1;
-            grid-row: 2;
-            margin: 0;
-            padding: 0;
-            display: flex;  
-            flex-direction: row;          
-        }
-        h2 { color: #5F85E3; }
-        h3 { color: rgb(95, 216, 227); }
-        nav a {
-            background-color: #645FE3;
-            color: white;
-            margin: 4px;
-            padding: 2px;
-            outline: 1px solid black;
-            text-decoration: none;
-        }
-        footer a { color: #8F5FE3; }
-        .boton {            
-            background-color: #0060A1;            
-            color: white;
-            padding: 2px;
-            outline: 1px solid black;
-            text-decoration: none;
-        }
-        .header p {
-            background-color: rgb(95 216 227 / 0.1); 
-            outline: 1px solid ;
-            grid-column: 1 / 3;
-            grid-row: 3;
-            padding: 5px;
-            animation-duration: 5s;
-            animation-name: slidein;
-        }
-        @keyframes slidein {
-            from {
-                margin-left: 100%;
-                width: 300%;
-            }
-
-            75% {
-                font-size: 200%;
-                margin-left: 25%;
-                width: 150%;
-            }
-
-            to {
-                margin-left: 0%;
-                width: 100%;
-            }
-        }
-        .header .imagen {
-            grid-column: 2;
-            grid-row: 1 / 3;
-            display: none;
-        }
-        #contenedor {
+        body {                      
+            background-color: var(--background-color);
+            box-sizing: border-box;
             display: grid;
-            grid-template-columns: 0.4fr 1.6fr; 
-            grid-template-rows: auto auto auto; 
-            gap: 0px 0px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;          
+            gap: 0px 0px;            
+            grid-template-columns: 80% 20%; 
+            grid-template-rows: auto auto auto;             
             margin: 10px;
+        }
+        .header {
+            display: grid;
+            grid-column: 1 / 3;
+            grid-row: 1;            
+            grid-template-columns: 20% 80%;
+            grid-template-rows: auto auto auto;
+
+            & h1 { 
+                color: var(--h1-color);
+                grid-column: 2;
+                grid-row: 1;
+            }    
+
+            & nav {
+                display: flex;  
+                grid-column: 2;
+                grid-row: 2;                  
+                flex-direction: row; 
+                
+                & a {
+                    background-color: #645FE3;
+                    color: white;
+                    height: 20px;
+                    margin: 4px;
+                    outline: 2px solid black;
+                    padding: 2px;                   
+                    text-decoration: none;                    
+                }
+            }
+
+            & p {
+                background-color: rgb(95 216 227 / 0.1); 
+                grid-column: 1 / 3;
+                grid-row: 3;
+                outline: 1px solid black;                
+                padding: 5px;
+            }
+
+            & .imagen {
+                grid-column: 1;
+                grid-row: 1 / 3;
+                display: grid;
+                place-items: center;
+
+                & img {
+                    aspect-ratio: 4/3;
+                    border-radius: 50%;
+                    border: 1px solid rgb(255 255 255 / 1); 
+                    width: 80%;           
+                }
+            }        
+        }        
+        h2 { color: var(--h2-color) }
+        h3 { 
+            color: var(--h3-color);
+            display: grid;
+            place-items: center;
+        }       
+        .boton {            
+            background-color: var(--boton-background-color);            
+            color: white;
+            outline: 1px solid black;
+            padding: 2px;            
+            text-decoration: none;
         }
         #proyectos section {
             display: flex;
-        }
-        #proyectos section article {
-            margin: 5px;
-            outline: 1px solid black;
-            padding: 5px;
-            width: 350px;
-        }
-        .header {
-            grid-column: 1 / 3;
-            grid-row: 1;
-            display: grid;
-            grid-template-columns: 1.4fr 0.6fr;
-            grid-template-rows: auto auto auto;
-        }
-        .header-article {
-            /*border: 1px solid black;*/
-        }
+
+            & article {
+                margin: 5px;
+                outline: 1px solid black;
+                padding: 5px;
+                max-width: 350px;                  
+            }
+        } 
         .main {
-            grid-column: 1 / 3;
+            grid-column: 1;
             grid-row: 2;            
         }
         .aside {
-            grid-column: 1;
+            grid-column: 2;
             grid-row: 2;
-            display: none;
+
+            & ul {
+                list-style-type: none;  
+                list-style-position: inside;          
+            }
         }
         .footer {
             grid-column: 1 / 3;
             grid-row: 3;
-        }
 
-        img {
-            border-radius: 50%;
-            display: block;
-            border: 1px solid rgb(255 255 255 / 1);            
-        }
-
-        aside ul {
-            list-style-type: none;            
+            & a {
+                color: var(--a-footer-color);
+            }
+        }                 
+        @media (width <= 700px) {
+            .aside {
+                display: none;               
+            }
         }
     </style>
 </head>
-<body>
-    <div id="contenedor">
+<body>    
     <header class="header">        
         <h1>Portfolio de Edalmava 👨‍💻</h1>
         
@@ -150,7 +150,7 @@
         </p>
         
         <div class="imagen">
-            <img alt="Fotografía de Edwin Alberto Martinez Vanegas disfrutando de la naturaleza" loading="lazy" src="/img/foto.jpg" style="aspect-ratio: 4/3; width: 100%" title="Foto de Edalmava">
+            <img alt="Fotografía de Edwin Alberto Martinez Vanegas disfrutando de la naturaleza" loading="lazy" src="/img/foto.jpg" title="Foto de Edalmava">
         </div>
         
     </header>
@@ -259,8 +259,7 @@
         <a href="mailto:admin@edalmava.co" target="_blank">Saludame con un correo</a>
         <a href="https://t.me/edalmava" target="_blank" title"Telegrameame">Contactar por Telegram</a>
     </footer>
-    </div>
-
+    
     <script>
         const summaries = document.querySelectorAll('#faq summary');
 
