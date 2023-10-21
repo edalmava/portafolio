@@ -13,37 +13,89 @@
 
     <style>
         body {            
-            background-color: rgb (252 145 106 / 0.5);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 10px 20px;
+            background-color: white;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: content-box;
+        }
+        h1 { 
+            color: #0060A1;
+            grid-column: 1 / 3;
+            grid-row: 1;
+        }
+        nav {
+            grid-column: 1;
+            grid-row: 2;
+            margin: 0;
+            padding: 0;
+            display: flex;  
+            flex-direction: row;          
+        }
+        h2 { color: #5F85E3; }
+        h3 { color: #5FD8E3; }
+        nav a {
+            background-color: #645FE3;
+            color: white;
+            margin: 4px;
+            padding: 2px;
+            outline: 1px solid black;
+            text-decoration: none;
+        }
+        footer a { color: #8F5FE3; }
+        .boton {            
+            background-color: #0060A1;            
+            color: white;
+            padding: 2px;
+            outline: 1px solid black;
+            text-decoration: none;
+        }
+        .header p {
+            background-color: rgb(95 216 227 / 0.2); 
+            outline: 1px solid ;
+            grid-column: 1 / 3;
+            grid-row: 3;
             padding: 5px;
         }
-        h1, nav a { color: #09f; }
-        .boton {            
-            background-color: #09f;
-            color: white;
-            outline: 1px solid #09f;
-            text-decoration: none;
+        .header .imagen {
+            grid-column: 2;
+            grid-row: 1 / 3;
+            display: none;
         }
         #contenedor {
             display: grid;
             grid-template-columns: 0.4fr 1.6fr; 
             grid-template-rows: auto auto auto; 
             gap: 0px 0px;
+            margin: 10px;
+        }
+        #proyectos section {
+            display: flex;
+        }
+        #proyectos section article {
+            margin: 5px;
+            outline: 1px solid black;
+            padding: 5px;
+            width: 350px;
         }
         .header {
             grid-column: 1 / 3;
             grid-row: 1;
             display: grid;
             grid-template-columns: 1.4fr 0.6fr;
+            grid-template-rows: auto auto auto;
+        }
+        .header-article {
+            /*border: 1px solid black;*/
         }
         .main {
-            grid-column: 2;
-            grid-row: 2;
+            grid-column: 1 / 3;
+            grid-row: 2;            
         }
         .aside {
             grid-column: 1;
             grid-row: 2;
+            display: none;
         }
         .footer {
             grid-column: 1 / 3;
@@ -53,14 +105,17 @@
         img {
             border-radius: 50%;
             display: block;
-            border: 1px solid rgb(255 255 255 / 1);
+            border: 1px solid rgb(255 255 255 / 1);            
+        }
+
+        aside ul {
+            list-style-type: none;            
         }
     </style>
 </head>
 <body>
     <div id="contenedor">
-    <header class="header">
-        <div class="">
+    <header class="header">        
         <h1>Portfolio de Edalmava 👨‍💻</h1>
         
         <nav>
@@ -74,8 +129,11 @@
         <p>
             Ingeniero de sistemas. <strong>Docente de Aula</strong> en el área de Informática y Tecnología.  Desarrollador Web con más de 10 años de experiencia.
         </p>
+        
+        <div class="imagen">
+            <img alt="Fotografía de Edwin Alberto Martinez Vanegas disfrutando de la naturaleza" loading="lazy" src="/img/foto.jpg" style="aspect-ratio: 4/3; width: 100%" title="Foto de Edalmava">
         </div>
-        <img alt="Fotografía de Edwin Alberto Martinez Vanegas disfrutando de la naturaleza" loading="lazy" src="/img/foto.jpg" style="aspect-ratio: 4/3; width: 100%" title="Foto de Edalmava">
+        
     </header>
     <main class="main">      
       <section id="experiencia">
@@ -91,22 +149,31 @@
         <header>
             <h2>Proyectos Realizados</h2>
         </header>
+        <section>
         <article>
-            <header><h3>Telegram Bot</h3></header>
+            <header class="header-article">
+                <h3>Telegram Bot</h3>
+            </header>
             <p>Bot de Telegram para consultar la lista de elegibles de una OPEC dada</p>
-            <p>Bot: <a class="boton" href="https://t.me/OpecEdalmavaBot" target="_blank" title="Bot de Telegram para consultar una OPEC">OpecEdalmavaBot</a></p>
+            <p>Bot: <a class="boton" href="https://t.me/OpecEdalmavaBot" target="_blank"
+                    title="Bot de Telegram para consultar una OPEC">OpecEdalmavaBot</a></p>
             <footer>
                 <small>Tecnologías usadas: <em>Python (Flask), Vercel Serverless Functions</em></small>
             </footer>
         </article>
-        <article>
-            <header><h3>Listas de Elegibles</h3></header>
-            <p>App para consultar las OPEC que tienen listas de elegibles.  De las listas de elegibles mostrar los participantes y sus estados</p>
-            <p>Sitio: <a class="boton" href="https://opec.edalmava.co" target="_blank" title="Sitio listas de elegibles">https://opec.edalmava.co</a></p>
+        <article class="header-article">
+            <header class="header-article">
+                <h3>Listas de Elegibles</h3>
+            </header>
+            <p>App para consultar las OPEC que tienen listas de elegibles. De las listas de elegibles mostrar los participantes
+                y sus estados</p>
+            <p>Sitio: <a class="boton" href="https://opec.edalmava.co" target="_blank"
+                    title="Sitio listas de elegibles">https://opec.edalmava.co</a></p>
             <footer>
                 <small>Tecnologías usadas: <em>HTML, CSS, JavaScript, Cloudflare Workers</em></small>
             </footer>
-        </article>        
+        </article>
+        </section>       
       </section>      
       <section id="faq">
         <header><h2>Preguntas Frecuentes</h2></header>
