@@ -130,7 +130,20 @@
             .aside {
                 display: none;               
             }
-        }
+            .header {
+                & .imagen {
+                    display: none;
+                }  
+                
+                & h1 {
+                    grid-column: 1 / 3;
+                }
+
+                & nav {
+                    grid-column: 1 / 3;
+                }
+            }
+        } 
     </style>
 </head>
 <body>    
