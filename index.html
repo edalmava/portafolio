@@ -50,6 +50,7 @@
                 grid-column: 2;
                 grid-row: 2;                  
                 flex-direction: row;
+                flex-wrap: wrap;
                 padding: 5px;
                 
                 & a {
@@ -109,15 +110,21 @@
         }
         #proyectos section {
             display: flex;
+            flex-wrap: wrap;
 
             & article {
                 margin: 5px;
                 outline: 1px solid black;                
-                max-width: 300px; 
-                min-width: 200px;   
+                max-width: 250px; 
+                min-width: 150px;   
                 
                 & header {
                     border-bottom: 1px solid black;
+
+                    & h3 {
+                        box-sizing: border-box;
+                        height: 26px;
+                    }
                 }
 
                 & footer {
